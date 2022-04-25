@@ -5,6 +5,7 @@ const HomePage = () => {
     return (
         <div>
             <div className={style.header}>
+                tetstst
                 <div className={style.text}>TRAVEL</div>
             </div>
             <Search/>
