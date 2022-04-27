@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './HomePage.module.scss'
 import Search from "./Search";
+import Recommendations from "./Recommendations";
 const HomePage = () => {
     return (
         <div>
@@ -8,6 +9,7 @@ const HomePage = () => {
                 <div className={style.text}>TRAVEL</div>
             </div>
             <Search/>
+            <Recommendations/>
         </div>
     )
 };
