@@ -2,113 +2,342 @@
   min-height: 500px;
   background-size: cover;
   background: url('https://cdn.switchfly.com/images_w/americanexpress/nav/default/travel-hero-image3.jpg') no-repeat fixed center;
-  font-family: Helvetica Neue,Helvetica,sans-serif;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
 }
-.searchTitleWrapper{
-  height:160px;
-  margin-left:190px;
-  margin-right:190px;
-   .title{
-    color:white;
-    font-size:40px;
-    width:100%;
-    height:50px;
-    padding-top:18px;
+
+.searchTitleWrapper {
+  height: 160px;
+  margin-left: 190px;
+  margin-right: 190px;
+
+  .title {
+    color: white;
+    font-size: 40px;
+    width: 100%;
+    height: 50px;
+    padding-top: 18px;
     padding-bottom: 18px;
   }
-   .titleDetails{
-    color:white;
-    font-size:15px;
-    font-weight:450;
-    padding-bottom:5px;
+
+  .titleDetails {
+    color: white;
+    font-size: 15px;
+    font-weight: 450;
+    padding-bottom: 5px;
   }
 }
-.searchContentWrapper{
-  margin-left:190px;
-  margin-right:190px;
-  height:auto;
-  .searchNavigationBarWrapper{
-    height:40px;
-    display:flex;
-    &:hover{
+
+.searchContentWrapper {
+  margin-left: 190px;
+  margin-right: 190px;
+
+  .searchNavigationBarWrapper {
+    height: 40px;
+    display: flex;
+
+    &:hover {
       cursor: pointer;
     }
-      .searchNavButton{
-      height:100%;
-      width:120px;
+
+    .searchNavButton {
+      height: 100%;
+      width: 120px;
       display: flex;
       justify-content: center;
       align-items: center;
       user-select: none;
       border-radius: 2px;
-      color:white;
-      background-color: #0073ff;
-      &:hover{
-        background-color: #006fcf;
+      color: white;
+      background-color: #006fcf;
+
+      &:hover {
+        background-color: #005fb2;
       }
-      .searchNavButtonTitle{
-        margin-left:3px;
+
+      .searchNavButtonTitle {
+        margin-left: 3px;
         display: flex;
       }
 
-      &.selected{
-        color:blue;
-        background-color:white;
-        &:hover{
+      &.navBarSelected {
+        color: #006fcf;
+        background-color: white;
+
+        &:hover {
           background-color: white;
         }
       }
     }
   }
 }
-.searchHotelWrapper{
+
+.searchHotelWrapper {
   background-color: white;
-    .hotelDestinationAndDates{
-      display: flex;
-      .searchDestination{
-        height:100px;
-        width:550px;
-        .searchDestinationTitle{
-          padding: 20px 0px 10px 20px;
-          font-size:15px;
+
+  .hotelDestinationAndDates {
+    display: flex;
+
+    .searchDestination {
+      height: 100px;
+      width: 550px;
+
+      .searchDestinationTitle {
+        padding: 20px 0px 10px 20px;
+        font-size: 15px;
+      }
+
+      .searchDestinationInputWrapper {
+        margin-left: 20px;
+        height: 40px;
+        border: 1px solid #b7b7b7;
+        border-radius: 5px;
+        background-color: #f6f6f6;
+        display: flex;
+        align-items: center;
+
+        &:focus-within {
+          box-shadow: 0 0 8px #5ca2e1;
+          outline: 1px solid blue;
         }
-        .searchDestinationInputWrapper{
-          margin-left:20px;
-          height:40px;
-          border:1px solid #b7b7b7;
-          border-radius: 5px;
-          background-color: #f6f6f6;
+
+        svg {
+          color: #868686;
+          padding-left: 5px;
+        }
+
+        input {
+          font-size: 15px;
+          width: 480px;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: #cccccc;
+          }
+
+          border: none;
+          background: none;
+        }
+      }
+    }
+
+    .searchDatesWrapper {
+      height: 100px;
+      width: 260px;
+      margin-left: 15px;
+
+      .searchDatesTitle {
+        padding: 20px 0px 10px 0px;
+        font-size: 15px;
+      }
+
+      .calendarWrapper {
+        height: 40px;
+        border: 1px solid #b7b7b7;
+        border-radius: 5px;
+        background-color: #f6f6f6;
+        display: flex;
+        align-items: center;
+        width: 260px;
+        transition: all 0.3s ease-in-out;
+
+        svg {
+          color: #868686;
+          margin-left: 5px;
+        }
+      ;
+
+        &:focus-within {
+          box-shadow: 0 0 8px #5ca2e1;
+          outline: 1px solid blue;
+        }
+
+        & input {
+          margin-left: 5px;
+          background: none;
+          border: none;
+          font-size: 16px;
+          width: 90%;
+          height: 35px;
+
+          &:focus {
+            border: 0;
+            outline: none;
+          }
+        }
+
+      }
+    }
+  }
+
+  .searchRoomWrapper {
+    width: 550px;
+
+    .searchRoomTitle {
+      padding: 20px 0px 10px 20px;
+      font-size: 15px;
+    }
+
+    .searchRoomSelectionButton {
+      margin-left: 20px;
+      height: 40px;
+      border: 1px solid #b7b7b7;
+      border-radius: 5px;
+      background-color: #f6f6f6;
+      display: flex;
+      align-items: center;
+
+      & svg {
+        color: #868686;
+        padding-left: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus-within {
+        box-shadow: 0 0 8px #5ca2e1;
+        outline: 1px solid blue;
+      }
+
+      .searchRoomText {
+        width: 500px;
+      }
+    }
+
+    .roomSelectionDropDownWrapper {
+      margin-left: 15px;
+      min-height: 250px;
+      width: 1100px;
+
+      .roomSelectionTitle {
+        padding: 20px 0px 10px 0px;
+        font-size: 15px;
+      }
+
+      .roomInformation {
+        min-height: 170px;
+        width: 100%;
+        border: 1px solid #e5e4e4;
+        border-radius: 2px;
+
+        .roomInformationTitle {
+          height: 40px;
+          width: 96%;
+          margin-left: 2%;
+          border-bottom: 1px solid #e5e4e4;
+          display: flex;
+          align-items: end;
+          font-size: 15px;
+          color: #333;
+        }
+
+        .roomInformationAdults {
+          width: 96%;
+          margin-left: 2%;
+          margin-bottom: 12px;
+          height: 50px;
           display: flex;
           align-items: center;
-          &:focus-within{
-            box-shadow: 0 0 8px #5ca2e1;
-            outline:1px solid blue;
+
+          .roomInformationAdultsTitle {
+            width: 9%;
           }
-          svg{
-            color: #868686;
-            padding-left:5px;
+        }
+
+        .removeButtonWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 19px;
+          width: 19px;
+          color: #4f4fce;
+          border: 2px solid #4f4fce;
+          margin-left: 20px;
+          margin-right: 20px;
+          border-radius: 50%;
+
+          & svg {
+            height: 20px;
+            width: 20px;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
-          input{
-            font-size:15px;
-            width:480px;
-            &:focus{
-              outline:none;
+
+          &.disabled {
+            background-color: #c7c7c7;
+            color: white;
+            border: 2px solid #c7c7c7;
+
+            :hover {
+              cursor: not-allowed;
             }
-            &::placeholder{
-              color: #cccccc;
+          }
+        }
+
+        .addButtonWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 19px;
+          width: 19px;
+          color: #4f4fce;
+          margin-left: 20px;
+          margin-right: 20px;
+          border: 2px solid #4f4fce;
+          border-radius: 50%;
+
+          & svg {
+            height: 20px;
+            width: 20px;
+
+            &:hover {
+              cursor: pointer;
             }
-            border:none;
-            background: none;
+          }
+        }
+
+        .roomInformationChildren {
+          width: 96%;
+          margin-left: 2%;
+          display: flex;
+          align-items: center;
+
+          .roomInformationChildrenTitle {
+            width: 9%;
           }
         }
       }
-      .searchDatesWrapper{
-        height:100px;
-        width:300px;
-        .searchDatesTitle{
-          padding: 20px 0px 10px 20px;
-          font-size:15px;
-        }
-      }
+    }
   }
+
+  .searchButtonWrapper {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+    .searchButton {
+      color: white;
+      height: 50px;
+      width: 110px;
+      margin-right: 20px;
+      border-radius: 5px;
+      background-color: #006fcf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #005fb2;
+      }
+    }
+  }
+
 }
