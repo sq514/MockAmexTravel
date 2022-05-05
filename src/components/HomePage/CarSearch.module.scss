@@ -1,0 +1,152 @@
+.searchCarWrapper {
+  background-color: white;
+
+
+  .searchDestination {
+    overflow: hidden;
+    height: 100px;
+    width: 550px;
+
+    .searchDestinationTitle {
+      padding: 20px 0px 10px 20px;
+      font-size: 15px;
+    }
+
+
+    .searchDestinationInputWrapper {
+      margin-left: 20px;
+      width: 95%;
+      height: 40px;
+      margin-bottom: 20px;
+      border: 1px solid #b7b7b7;
+      border-radius: 5px;
+      background-color: #f6f6f6;
+      display: flex;
+      align-items: center;
+
+      &:focus-within {
+        box-shadow: 0 0 8px #5ca2e1;
+        outline: 1px solid blue;
+      }
+
+      svg {
+        color: #868686;
+        padding-left: 5px;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 15px;
+        width: 90%;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: #cccccc;
+        }
+
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+          display: none;
+        }
+
+        border: none;
+        background: none;
+      }
+    }
+  }
+
+  .carTypeWrapper {
+    margin-left: 20px;
+  }
+
+  .carPickupDate {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .searchDatesWrapper {
+      height: 100px;
+      width: 260px;
+      margin-left: 15px;
+
+      .searchDatesTitle {
+        padding: 20px 0px 10px 0px;
+        font-size: 15px;
+      }
+
+      .calendarWrapper {
+        height: 40px;
+        border: 1px solid #b7b7b7;
+        border-radius: 5px;
+        background-color: #f6f6f6;
+        display: flex;
+        align-items: center;
+        width: 260px;
+        transition: all 0.3s ease-in-out;
+
+        svg {
+          color: #868686;
+          margin-left: 5px;
+        }
+      ;
+
+        &:focus-within {
+          box-shadow: 0 0 8px #5ca2e1;
+          outline: 1px solid blue;
+        }
+
+        & input {
+          margin-left: 5px;
+          background: none;
+          border: none;
+          font-size: 16px;
+          width: 90%;
+          height: 90%;
+
+          &:focus {
+            border: 0;
+            outline: none;
+          }
+
+        }
+
+      }
+    }
+  }
+
+
+}
+
+.searchButtonWrapper {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+  .searchButton {
+    color: white;
+    height: 50px;
+    width: 110px;
+    margin-right: 20px;
+    border-radius: 5px;
+    background-color: #006fcf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #005fb2;
+    }
+  }
+}
+
+.driverAgeCheckBox {
+  padding-left: 12px;
+  margin-top: 15px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+}

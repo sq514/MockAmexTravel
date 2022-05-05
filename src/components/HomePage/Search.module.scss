@@ -1,8 +1,9 @@
 .searchWrapper {
-  min-height: 500px;
   background-size: cover;
   background: url('https://cdn.switchfly.com/images_w/americanexpress/nav/default/travel-hero-image3.jpg') no-repeat fixed center;
   font-family: Helvetica Neue, Helvetica, sans-serif;
+  padding-bottom: 40px;
+
 }
 
 .searchTitleWrapper {
@@ -30,6 +31,7 @@
 .searchContentWrapper {
   margin-left: 190px;
   margin-right: 190px;
+  transition: all 0.3s ease-in-out;
 
   .searchNavigationBarWrapper {
     height: 40px;
@@ -76,6 +78,8 @@
 
   .hotelDestinationAndDates {
     display: flex;
+    width: 100%;
+    flex-wrap: wrap;
 
     .searchDestination {
       height: 100px;
@@ -173,7 +177,7 @@
   }
 
   .searchRoomWrapper {
-    width: 550px;
+    width: 100%;
 
     .searchRoomTitle {
       padding: 20px 0px 10px 20px;
@@ -188,6 +192,7 @@
       background-color: #f6f6f6;
       display: flex;
       align-items: center;
+      width: 46.5%;
 
       & svg {
         color: #868686;
@@ -209,9 +214,10 @@
     }
 
     .roomSelectionDropDownWrapper {
+      overflow: hidden;
       margin-left: 15px;
-      min-height: 250px;
-      width: 1100px;
+      width: 95%;
+      transition: all 0.3s ease-in-out;
 
       .roomSelectionTitle {
         padding: 20px 0px 10px 0px;
@@ -220,7 +226,7 @@
 
       .roomInformation {
         min-height: 170px;
-        width: 100%;
+        width: 98%;
         border: 1px solid #e5e4e4;
         border-radius: 2px;
 
@@ -339,5 +345,5 @@
       }
     }
   }
-
 }
+
