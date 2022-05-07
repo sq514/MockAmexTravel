@@ -6,9 +6,9 @@ import DatePicker from "react-datepicker";
 import Select from 'react-select'
 import {Checkbox} from "@mui/material";
 import {useSelector, useDispatch} from 'react-redux'
-import {setInputText, setStartDate} from "../../ducks/carSearch/carSearchSlice";
+import { setEndDate, setInputText, setStartDate } from "../../ducks/carSearch/carSearchSlice";
 
-
+const DRIVER_AGE_WRAPPER_HEIGHT = '130px';
 const pickupDateStyles = {
     control: (_, state) => {
         return {
@@ -73,16 +73,17 @@ const CarSearch = () => {
     ]
 
 
-    const [boxHeight, setBoxHeight] = useState('auto')
+    const [boxHeight, setBoxHeight] = useState(DRIVER_AGE_WRAPPER_HEIGHT)
     const checkBoxHandler = () => {
-        if (boxHeight == 'auto') setBoxHeight(0)
-        if (boxHeight == 0) setBoxHeight('auto')
+        if (boxHeight === DRIVER_AGE_WRAPPER_HEIGHT) setBoxHeight(0)
+        else setBoxHeight(DRIVER_AGE_WRAPPER_HEIGHT)
     }
 
 
     const dispatch = useDispatch()
-    const inputText = useSelector((state) => state.carSearch.inputText)
-    const startDate = useSelector((state) => state.carSearch.startDate)
+    const {inputText,startDate,endDate} = useSelector(
+      (state) => state.carSearch
+    )
     const inputHandler = (e) => {
         dispatch(setInputText(e.target.value))
     }
@@ -116,9 +117,9 @@ const CarSearch = () => {
                     <div className={style.calendarWrapper}>
                         <DateRangeIcon/>
                         <DatePicker
-                            minDate={new Date()}
-                            selected={startDate}
-                            onChange={(date) => dispatch(setStartDate(date))}/>
+                            minDate={startDate}
+                            selected={endDate}
+                            onChange={(date) => dispatch(setEndDate(date))}/>
                     </div>
                 </div>
                 <div className={style.searchDatesWrapper}>
@@ -137,7 +138,7 @@ const CarSearch = () => {
                 <Checkbox size="small" onChange={checkBoxHandler}/>
                 <div>Driver&apos; age is between 30 to 65 years old</div>
             </div>
-            <div className={style.searchDestination} style={{height: boxHeight}}>
+            <div className={style.searchDestination} style={{height: boxHeight, overflow:!boxHeight?'hidden':'none'}}>
                 <div className={style.searchDestinationTitle}>Driver Age</div>
                 <div className={style.searchDestinationInputWrapper}>
                     <input placeholder={'Age'} type="number"></input>

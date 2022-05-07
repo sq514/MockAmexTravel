@@ -192,6 +192,7 @@
       background-color: #f6f6f6;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       width: 46.5%;
 
       & svg {
@@ -209,7 +210,7 @@
       }
 
       .searchRoomText {
-        width: 500px;
+        width: 90%;
       }
     }
 
