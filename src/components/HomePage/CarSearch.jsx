@@ -5,6 +5,9 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 import DatePicker from "react-datepicker";
 import Select from 'react-select'
 import {Checkbox} from "@mui/material";
+import {useSelector, useDispatch} from 'react-redux'
+import {setInputText, setStartDate} from "../../ducks/carSearch/carSearchSlice";
+
 
 const pickupDateStyles = {
     control: (_, state) => {
@@ -48,7 +51,7 @@ const carTypeStyles = {
 }
 
 const CarSearch = () => {
-    const [startDate, setStartDate] = useState(new Date())
+
     const carTypeOptions = [
         {value: 'compact', label: 'Compact'},
         {value: 'convertible', label: 'Convertible'},
@@ -68,14 +71,20 @@ const CarSearch = () => {
         {value: '16', label: '16:00'},
         {value: '18', label: '18:00'},
     ]
+
+
     const [boxHeight, setBoxHeight] = useState('auto')
     const checkBoxHandler = () => {
         if (boxHeight == 'auto') setBoxHeight(0)
         if (boxHeight == 0) setBoxHeight('auto')
     }
-    const [inputText, setInputText] = useState()
+
+
+    const dispatch = useDispatch()
+    const inputText = useSelector((state) => state.carSearch.inputText)
+    const startDate = useSelector((state) => state.carSearch.startDate)
     const inputHandler = (e) => {
-        setInputText(e.target.value)
+        dispatch(setInputText(e.target.value))
     }
     return (
         <div className={style.searchCarWrapper}>
@@ -95,7 +104,7 @@ const CarSearch = () => {
                         <DatePicker
                             minDate={new Date()}
                             selected={startDate}
-                            onChange={(date) => setStartDate(date)}/>
+                            onChange={(date) => dispatch(setStartDate(date))}/>
                     </div>
                 </div>
                 <div className={style.searchDatesWrapper}>
@@ -109,7 +118,7 @@ const CarSearch = () => {
                         <DatePicker
                             minDate={new Date()}
                             selected={startDate}
-                            onChange={(date) => setStartDate(date)}/>
+                            onChange={(date) => dispatch(setStartDate(date))}/>
                     </div>
                 </div>
                 <div className={style.searchDatesWrapper}>
